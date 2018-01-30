@@ -1,6 +1,6 @@
 {
   "name": "hologram-nova",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A node module for interacting with the Hologram Nova via AT commands",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,6 @@
   "dependencies": {
     "async": "^2.6.0",
     "coffee-script": "^1.12.7",
-    "lodash": "^4.17.4",
-    "modem": "^1.0.3"
+    "lodash": "^4.17.4"
   }
 }
