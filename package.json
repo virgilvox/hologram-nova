@@ -1,0 +1,15 @@
+{
+  "name": "hologram-nova",
+  "version": "1.0.0",
+  "description": "A node module for interacting with the Hologram Nova via AT commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "virgilvox",
+  "license": "ISC",
+  "dependencies": {
+    "coffee-script": "^1.12.7",
+    "modem": "^1.0.3"
+  }
+}
