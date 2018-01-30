@@ -1,5 +1,9 @@
 # hologram-nova
 
+Args: cmd, wait, success, fail
+Success defaults to "OK"
+Fail defaults to "ERROR"
+
 ### Send single command
 
 ```js
