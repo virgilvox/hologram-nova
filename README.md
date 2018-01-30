@@ -6,8 +6,8 @@
 var HologramNova = require("hologram-nova");
 var nova = new HologramNova({});
 
-nova.sendCommand("AT+CGMI\r\n", 25, null, null, function(res, err){
-  console.log(res, err);
+nova.sendCommand("AT+CGMI\r\n", 25, null, null, function(err, res){
+  console.log(res);
 });
 ```
 
@@ -27,10 +27,10 @@ var commands = [
   ["AT+CIPSERVER=1,4010\r\n", 2, "SERVER OK", null]
 ]
 
-nova.sendCommands( commands, function(res, err){
+nova.sendCommands( commands, function(err, res){
   if(err){
     throw(err)
   }
-  console.log(res, err);
+  console.log(res);
 });
 ```
