@@ -9,7 +9,9 @@
   "author": "virgilvox",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.6.0",
     "coffee-script": "^1.12.7",
+    "lodash": "^4.17.4",
     "modem": "^1.0.3"
   }
 }

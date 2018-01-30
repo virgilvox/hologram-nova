@@ -1,19 +1,3 @@
-# hologram-nova
-
-### Send single command
-
-```js
-var HologramNova = require("hologram-nova");
-var nova = new HologramNova({});
-
-nova.sendCommand("AT+CGMI\r\n", 25, null, null, function(res, err){
-  console.log(res, err);
-});
-```
-
-### Send multiple commands
-
-```js
 var HologramNova = require("../index.js");
 var nova = new HologramNova({});
 
@@ -33,4 +17,3 @@ nova.sendCommands( commands, function(res, err){
   }
   console.log(res, err);
 });
-```

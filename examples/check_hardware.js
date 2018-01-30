@@ -6,7 +6,7 @@ nova.sendCommand("AT+CPIN?\r\n", 25, null, null, function(res, err){
     throw(err)
   }
   console.log(res, err);
-  nova.sendCommand("AT+CGMI\r\n", 25, null, null, function(res, err){
+  nova.sendCommand("AT+CMGF=1\r\n", 10, null, null, function(res, err){
     if(err){
       throw(err)
     }
