@@ -1,8 +1,12 @@
 # hologram-nova
 
+WARNING: All that works is sending commands so far. My AT commands aren't working for connect or sendMessage. If anyone wants to help please PR.
+
+```
 Args: cmd, wait, success, fail
 Success defaults to "OK"
 Fail defaults to "ERROR"
+```
 
 ### Send single command
 
@@ -37,4 +41,24 @@ nova.sendCommands( commands, function(err, res){
   }
   console.log(res);
 });
+```
+
+### Send MESSAGE
+
+```js
+var HologramNova = require("../index.js");
+var nova = new HologramNova({"key": "@wqV7T&y"});
+
+nova.connect(function(err){
+  if(err){
+    throw(err)
+  }
+  nova.sendMessage( "Launch ze missiles!", function(err){
+    if(err){
+      throw(err)
+    }
+    console.log("Success");
+  });
+});
+
 ```
