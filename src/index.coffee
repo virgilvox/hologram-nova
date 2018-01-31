@@ -10,9 +10,12 @@ class HologramNova
     @port = @port || "9999"
     @nova = SerialPort device, { baudRate: 19200, parser: SerialPort.parsers.raw }, (err) ->
       throw err if err?
+      @sendCommand "AT+CMGF=1\r\n", 10, "OK", null, (err) =>
+        throw err if err?
 
   connect: (callback) =>
     commands = [
+      ["AT+CIPSHUT\r\n", 65, "SHUT OK", null]
       ["AT+CGATT?\r\n", 10, "OK", null]
       ["AT+CIPMUX=1\r\n", 2, "OK", null]
       ["AT+CSTT=\"hologram\"\r\n", 2, "OK", null]
@@ -22,6 +25,9 @@ class HologramNova
     ]
 
     @sendCommands commands, callback
+
+  disconnect: (callback) =>
+    @sendCommand "AT+CIPCLOSE=1\r\n", 4, "CLOSE OK", null, callback
 
   sendCommand: (cmd, wait, success="OK", fail="ERROR", callback) =>
     @nova.write cmd, (err) =>
